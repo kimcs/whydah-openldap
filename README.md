@@ -1,6 +1,9 @@
 # whydah-openldap
 Docker build for a basic openldap image that will work with Whydah UIB
 
+Builds on this guide https://wiki.cantara.no/display/whydah/Install+OpenLDAP+for+UIB by Erik Drolshammer
+
+
 Edit domainbase, adminpassword, uibadminpassword
 `$ vi generate-ldifs.sh`
 
