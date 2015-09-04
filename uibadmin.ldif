@@ -1,0 +1,23 @@
+version: 1
+
+dn: dc=yourdomain,dc=no
+objectClass: top
+objectClass: extensibleObject
+objectClass: domain
+
+dn: ou=users,dc=yourdomain,dc=no
+objectClass: top
+objectClass: organizationalUnit
+ou: users
+
+dn: cn=uibadmin,ou=users,dc=yourdomain,dc=no
+objectClass: top
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+cn: uibadmin 
+sn: UIBAdmin
+givenName: UIBAdmin
+initials: uibadmin
+uid: uibadmin
+userPassword: secret
