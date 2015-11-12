@@ -19,7 +19,7 @@ RUN echo 'root:kjempehemmelig' | chpasswd
 RUN sed -i 's/PermitRootLogin without-password/PermitRootLogin yes/' /etc/ssh/sshd_config
 RUN sed 's@session\s*required\s*pam_loginuid.so@session optional pam_loginuid.so@g' -i /etc/pam.d/sshd
 RUN echo "export VISIBLE=now" >> /etc/profile
-#RUN /usr/sbin/sshd-keygen
+#RUN /usr/bin/ssh-keygen
 EXPOSE 22
 
 # Configure supervisor
