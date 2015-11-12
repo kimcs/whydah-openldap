@@ -30,5 +30,8 @@ EXPOSE 389
 ADD supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 ADD init-ldap.sh /scripts/init-ldap.sh
 
+# Add VOLUMEs to allow backup of config, logs and databases
+# * To store the data outside the container, mount /var/lib/ldap as a data volume
+VOLUME ["/etc/ldap", "/var/lib/ldap", "/run/slapd"]
 
 CMD ["/usr/bin/supervisord"]
