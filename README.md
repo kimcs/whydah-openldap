@@ -54,37 +54,37 @@ modifying entry "olcDatabase={1}hdb,cn=config"
 ### Verify LDAP setup
 Connect with super user and list everything in the domain.
 ```
-$ ldapsearch -D cn=admin,dc=mydomain,dc=com -w ubersecret -p 13389 -h localhost -b "dc=mydomain,dc=com" -s sub "(objectclass=*)"
+$ ldapsearch -D cn=admin,dc=mycompany,dc=com -w ubersecret -p 13389 -h localhost -b "dc=mycompany,dc=com" -s sub "(objectclass=*)"
 ```
 Also, check that it's possible to connect using the uibadmin user.
 ```
-$ ldapsearch -D cn=uibadmin,ou=users,dc=mydomain,dc=com -w mysecret123 -p 13389 -h localhost -b "dc=mydomain,dc=com" -s sub "(objectclass=*)"
+$ ldapsearch -D cn=uibadmin,ou=users,dc=mycompany,dc=com -w mysecret123 -p 13389 -h localhost -b "dc=mycompany,dc=com" -s sub "(objectclass=*)"
 ```
 Both these commands should produce an output similar to the following:
 ```
 # extended LDIF
 #
 # LDAPv3
-# base <dc=mydomain,dc=com> with scope subtree
+# base <dc=mycompany,dc=com> with scope subtree
 # filter: (objectclass=*)
 # requesting: ALL
 #
 
-# mydomain.com
-dn: dc=mydomain,dc=com
+# mycompany.com
+dn: dc=mycompany,dc=com
 objectClass: top
 objectClass: extensibleObject
 objectClass: domain
-dc: mydomain
+dc: mycompany
 
-# users, mydomain.com
-dn: ou=users,dc=mydomain,dc=com
+# users, mycompany.com
+dn: ou=users,dc=mycompany,dc=com
 objectClass: top
 objectClass: organizationalUnit
 ou: users
 
-# uibadmin, users, mydomain.com
-dn: cn=uibadmin,ou=users,dc=mydomain,dc=com
+# uibadmin, users, mycompany.com
+dn: cn=uibadmin,ou=users,dc=mycompany,dc=com
 objectClass: top
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
