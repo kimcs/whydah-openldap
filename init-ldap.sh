@@ -1,11 +1,13 @@
 #!/usr/bin/env bash
 
-
 #
 # The main function where program execution begin and end
 #
 
 function main {
+
+# Use location of this script as current working directory
+cd "$(dirname $(readlink -f ${0}))"
 
 DOMAINBASE=$(capture_domainbase)
 ADMINUSERNAME=$(capture_username "Enter username of openldap super user: ")
